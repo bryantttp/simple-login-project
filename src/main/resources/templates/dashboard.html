@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link rel="stylesheet" href="/dashboard.css">
+		<meta charset="UTF-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/87c4d319f6.js" crossorigin="anonymous"></script>
+		<title>Dashboard</title>
+	</head>
+	<script th:src="@{/Chart.js}"></script>
+	<body>        
+		<!-- dashboard -->
+		<div class="mainPage" id="main">
+			<h1 th:text="'Hello ' + ${user.name} + ','"></h1>
+			<p id="headerIntro"> This is for you, at a glance: </p>	
+			<p th:text="'Username: ' + ${user.username}"></p>
+			<p th:text="'Role: ' + ${#strings.substring(user.Role, 5)}"></p>
+		</div>
+		<div class="logout">
+			<a href="/logout">Logout</a>
+		</div>
+	</body>	
+</html>
